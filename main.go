@@ -30,7 +30,7 @@ func Init() (*tuntap.Interface, error) {
 	ip, subnet, err := net.ParseCIDR(ipv6Address)
 
 	bits, _ := subnet.Mask.Size()
-	log.Printf("ip addr dev %s %s/d", tun0, ip, bits)
+	log.Printf("ip addr dev %s %s/%d", tun0, ip, bits)
 	err = netlink.AddrAdd(iface, &netlink.Addr{
 		IPNet: &net.IPNet{IP: ip, Mask: subnet.Mask},
 		Scope: syscall.RT_SCOPE_UNIVERSE,
