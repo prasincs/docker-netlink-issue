@@ -66,3 +66,13 @@ Adding the following options for dockerd doesn't help either
 ```
 DOCKER_OPTS="--ipv6=true --fixed-cidr-v6=fd28:49be::0/120"
 ```
+
+
+## Running without go netlink
+
+
+```
+ip tuntap add mode tun
+ip addr add dev tun0 fd28:49be:758:7653:3cb1:6d:230c:60/64
+RTNETLINK answers: Permission denied
+```
