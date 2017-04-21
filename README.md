@@ -59,3 +59,10 @@ sudo docker run --privileged --rm golang:1.8 sh -c "go get github.com/prasincs/d
 
 
 The code works fine outside of docker.
+
+
+Adding the following options for dockerd doesn't help either
+
+```
+DOCKER_OPTS="--ipv6=true --fixed-cidr-v6=fd28:49be::0/120"
+```
